@@ -35,7 +35,7 @@ public class NewContact extends AppCompatActivity {
             String arg_bday = birthday.getText().toString();
             String arg_phone = phone.getText().toString();
             if(arg_name.equals("")||arg_bday.equals("")||arg_phone.equals("")){
-                Toast.makeText(NewContact.this, "Нельзя отсавлять пустые" +
+                Toast.makeText(NewContact.this, "Нельзя оставлять пустые" +
                         " поля", Toast.LENGTH_SHORT).show();
             }else{
                 ContactsHelper ch = new ContactsHelper(getApplicationContext());

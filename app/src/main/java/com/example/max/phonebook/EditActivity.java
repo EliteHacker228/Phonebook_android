@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -61,13 +62,18 @@ public class EditActivity extends AppCompatActivity {
             String new_name = name.getText().toString();
             String new_birthday = bday.getText().toString();
             String new_phone = phone.getText().toString();
+            if(new_name.equals("")||new_birthday.equals("")||new_phone.equals("")){
+                Toast.makeText(EditActivity.this, "Нельзя оставлять пустые" +
+                        " поля", Toast.LENGTH_SHORT).show();
+            }else {
 
-            Contact new_contact = new Contact(1,new_name, new_birthday, new_phone);
-            ch.insert(new_name, new_birthday, new_phone);
-            ch.update(new_contact);
+                Contact new_contact = new Contact(1, new_name, new_birthday, new_phone);
+                ch.insert(new_name, new_birthday, new_phone);
+                ch.update(new_contact);
 
-            Intent intent2 = new Intent(EditActivity.this, MainActivity.class);
-            startActivity(intent2);
+                Intent intent2 = new Intent(EditActivity.this, MainActivity.class);
+                startActivity(intent2);
+            }
         }
     };
 
@@ -80,16 +86,17 @@ public class EditActivity extends AppCompatActivity {
 
             ContactsHelper ch = new ContactsHelper(getApplicationContext());
 
-            String new_name = name.getText().toString();
-            String new_birthday = bday.getText().toString();
-            String new_phone = phone.getText().toString();
+            String new_name = intent.getStringExtra("source_name");
+            String new_birthday =intent.getStringExtra("source_bday");
+            String new_phone = intent.getStringExtra("source_phone");
 
-            Contact new_contact = new Contact(1,new_name, new_birthday, new_phone);
-            ch.insert(new_name, new_birthday, new_phone);
-            ch.update(new_contact);
+                Contact new_contact = new Contact(1, new_name, new_birthday, new_phone);
+                ch.insert(new_name, new_birthday, new_phone);
+                ch.update(new_contact);
 
-            Intent intent2 = new Intent(EditActivity.this, MainActivity.class);
-            startActivity(intent2);
+                Intent intent2 = new Intent(EditActivity.this, MainActivity.class);
+                startActivity(intent2);
+
 
         }
     };
