@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.max.phonebook.NewContact">
+
+    <TextView
+
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:textSize="25sp"
+        android:layout_height="100dp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold|italic"
+        android:text="Создание нового контакта" />
+
+    <EditText
+        android:id="@+id/nc_txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Имя" />
+
+    <EditText
+        android:id="@+id/nc_txt_bday"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="День рождения" />
+
+    <EditText
+        android:id="@+id/nc_txt_phone"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Телефон" />
+
+    <Button
+        android:id="@+id/nc_create_button"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:text="Создать"
+        android:textSize="20sp"/>
+</LinearLayout>
